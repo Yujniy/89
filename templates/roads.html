@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Направления программирования и IT</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Мир программирования</h1>
+            <nav>
+                <ul>
+                    <li><a href="{{ url_for('index') }}">Главная</a></li>
+                    <li><a href="#web-dev">Веб-разработка</a></li>
+                    <li><a href="#mobile-dev">Мобильная разработка</a></li>
+                    <li><a href="#data-science">Наука о данных</a></li>
+                    <li><a href="#testing">Тестирование</a></li>
+                    <li><a href="#other">Другие направления</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <h2>Направления программирования и IT</h2>
+
+        <section id="web-dev">
+            <h3>Веб-разработка</h3>
+            <ul>
+                <li>Frontend-разработчик (Junior, Middle, Senior)</li>
+                <li>Backend-разработчик (Junior, Middle, Senior)</li>
+                <li>Fullstack-разработчик</li>
+                <li>Web-дизайнер</li>
+                <li>UX/UI дизайнер</li>
+            </ul>
+        </section>
+
+        <section id="mobile-dev">
+            <h3>Мобильная разработка</h3>
+            <ul>
+                <li>iOS-разработчик (Junior, Middle, Senior)</li>
+                <li>Android-разработчик (Junior, Middle, Senior)</li>
+                <li>Кроссплатформенный разработчик</li>
+            </ul>
+        </section>
+
+        <section id="data-science">
+            <h3>Наука о данных и искусственный интеллект</h3>
+            <ul>
+                <li>Data Scientist</li>
+                <li>Machine Learning Engineer</li>
+                <li>Data Analyst</li>
+                <li>Big Data Engineer</li>
+            </ul>
+        </section>
+
+        <section id="testing">
+            <h3>Тестирование и QA</h3>
+            <ul>
+                <li>Ручной тестировщик (Junior, Middle, Senior)</li>
+                <li>Автоматизатор тестирования (Junior, Middle, Senior)</li>
+                <li>QA Engineer</li>
+                <li>Security Tester</li>
+            </ul>
+        </section>
+
+        <section id="other">
+            <h3>Другие направления</h3>
+            <ul>
+                <li>DevOps инженер</li>
+                <li>Системный администратор</li>
+                <li>Специалист по информационной безопасности</li>
+                <li>Геймдев-разработчик</li>
+                <li>Embedded-разработчик</li>
+                <li>Технический писатель</li>
+                <li>Project Manager</li>
+                <li>Product Manager</li>
+                <li>Scrum Master</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-section about">
+                <h3>О проекте</h3>
+                <p>Этот сайт создан для информирования о популярных языках программирования и их возможностях. Мы стремимся помочь начинающим разработчикам в выборе направления для изучения.</p>
+            </div>
+            <div class="footer-section contact">
+                <h3>Контакты</h3>
+                <p><i class="fas fa-envelope"></i> info@programminglanguages.com</p>
+                <p><i class="fas fa-phone"></i> +7 (999) 123-45-67</p>
+            </div>
+            <div class="footer-section social">
+                <h3>Мы в соцсетях</h3>
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-github"></i></a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Мир Программирования. Все права защищены.</p>
+        </div>
+    </div>
+</footer>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const links = document.querySelectorAll('a[href^="#"]');
+
+    for (const link of links) {
+        link.addEventListener('click', clickHandler);
+    }
+
+    function clickHandler(e) {
+        e.preventDefault();
+        const href = this.getAttribute('href');
+        const offsetTop = document.querySelector(href).offsetTop;
+
+        scroll({
+            top: offsetTop,
+            behavior: "smooth"
+        });
+    }
+});
+</script>
+</body>
+</html>
